@@ -6,6 +6,25 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
+    class Number {
+        int number;
+
+        public boolean isTriangular() {
+            int x = 1;
+            int triangularNumber = 1;
+            while (triangularNumber < number) {
+                x++;
+                triangularNumber = triangularNumber + x;
+            }
+
+            if (triangularNumber == number) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
