@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Number Shapes</string>
+    <string name="enter_a_number_below_to_see_whether_it_s_square_triangular_or_both">Enter a number below to see whether it\'s square, triangular or both!</string>
 </resources>
