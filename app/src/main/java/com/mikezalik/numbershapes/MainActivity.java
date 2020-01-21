@@ -3,8 +3,13 @@ package com.mikezalik.numbershapes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+
+    public void testNumber (View view) {
+        
+    }
 
     class Number {
         int number;
