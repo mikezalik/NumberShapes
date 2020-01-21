@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    public void testNumber (View view) {
-        
-    }
+
 
     class Number {
         int number;
@@ -38,6 +37,25 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 return false;
             }
+        }
+    }
+
+    public void checkNumber (View view) {
+        EditText editText = findViewById(R.id.editText);
+
+        Number myNumber = new Number();
+        myNumber.number = Integer.parseInt(editText.getText().toString());
+
+        String message;
+
+        if (myNumber.isSquare() && myNumber.isTriangular()) {
+            message = editText.getText().toString() + " is square and triangular!";
+        } else if (myNumber.isSquare()) {
+            message = editText.getText().toString() + " is square";
+        } else if (myNumber.isTriangular()) {
+            message = editText.getText().toString() + " is triangular";
+        } else {
+            message = editText.getText().toString() + " is neither square nor triangular!";
         }
     }
 
