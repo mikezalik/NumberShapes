@@ -5,10 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
-
 
     class Number {
         int number;
@@ -46,17 +45,19 @@ public class MainActivity extends AppCompatActivity {
         Number myNumber = new Number();
         myNumber.number = Integer.parseInt(editText.getText().toString());
 
-        String message;
+        String message = editText.getText().toString();
 
         if (myNumber.isSquare() && myNumber.isTriangular()) {
-            message = editText.getText().toString() + " is square and triangular!";
+            message += " is square and triangular!";
         } else if (myNumber.isSquare()) {
-            message = editText.getText().toString() + " is square";
+            message += " is square but not triangular";
         } else if (myNumber.isTriangular()) {
-            message = editText.getText().toString() + " is triangular";
+            message += " is triangular but not square";
         } else {
-            message = editText.getText().toString() + " is neither square nor triangular!";
+            message += " is neither square nor triangular!";
         }
+
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
     @Override
