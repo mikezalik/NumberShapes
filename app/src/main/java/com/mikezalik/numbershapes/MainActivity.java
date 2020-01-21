@@ -41,22 +41,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkNumber (View view) {
         EditText editText = findViewById(R.id.editText);
+        String message;
 
-        Number myNumber = new Number();
-        myNumber.number = Integer.parseInt(editText.getText().toString());
-
-        String message = editText.getText().toString();
-
-        if (myNumber.isSquare() && myNumber.isTriangular()) {
-            message += " is square and triangular!";
-        } else if (myNumber.isSquare()) {
-            message += " is square but not triangular";
-        } else if (myNumber.isTriangular()) {
-            message += " is triangular but not square";
+        if (editText.getText().toString().isEmpty()) {
+            message = "Please enter a number";
         } else {
-            message += " is neither square nor triangular!";
-        }
+            Number myNumber = new Number();
+            myNumber.number = Integer.parseInt(editText.getText().toString());
 
+            message = editText.getText().toString();
+
+            if (myNumber.isSquare() && myNumber.isTriangular()) {
+                message += " is square and triangular!";
+            } else if (myNumber.isSquare()) {
+                message += " is square but not triangular";
+            } else if (myNumber.isTriangular()) {
+                message += " is triangular but not square";
+            } else {
+                message += " is neither square nor triangular!";
+            }
+        }
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
